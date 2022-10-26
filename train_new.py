@@ -1,15 +1,32 @@
 import argparse
-
+import os
+from xml.dom.minidom import Entity
 import pandas as pd
-import re
 from tqdm.auto import tqdm
-
+from datetime import timedelta, datetime
+import wandb
 import transformers
 import torch
 import torchmetrics
 import pytorch_lightning as pl
-import os
-os.chdir('/opt/ml')
+import re
+
+from pytorch_lightning.loggers import WandbLogger
+from pytorch_lightning.callbacks import ModelCheckpoint
+from pytorch_lightning.callbacks.early_stopping import EarlyStopping
+
+
+os.chdir("/opt/ml")
+wandb_dict = {
+    'gwkim_22':'f631be718175f02da4e2f651225fadb8541b3cd9',
+    'rion_':'0d57da7f9222522c1a3dbb645a622000e0344d36',
+    'daniel0801':'b8c4d92272716adcb1b2df6597cfba448854ff90',
+    'seokhee':'c79d118b300d6cff52a644b8ae6ab0933723a59f',
+    'dk100':'263b9353ecef00e35bdf063a51a82183544958cc'
+}
+
+time_ = datetime.now() + timedelta(hours=9)
+time_now = time_.strftime("%m%d%H%M")
 
 class Dataset(torch.utils.data.Dataset):
     def __init__(self, inputs, targets=[]):
@@ -173,45 +190,65 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_name', default='klue/roberta-small', type=str)
     parser.add_argument('--batch_size', default=16, type=int)
-    parser.add_argument('--max_epoch', default=1, type=int)
+    parser.add_argument('--max_epoch', default=10, type=int)
     parser.add_argument('--shuffle', default=True)
     parser.add_argument('--learning_rate', default=1e-5, type=float)
     parser.add_argument('--train_path', default='./data/train.csv')
     parser.add_argument('--dev_path', default='./data/dev.csv')
-    parser.add_argument('--test_path', default='./data/test.csv')
+    parser.add_argument('--test_path', default='./data/dev.csv')
     parser.add_argument('--predict_path', default='./data/test.csv')
-    parser.add_argument('--time_now', default='10261724')
-    args = parser.parse_args(args=[])
+    parser.add_argument('--wandb_username', default='gwkim_22')
+    parser.add_argument('--wandb_project', default='sts')
+    parser.add_argument('--wandb_entity', default='sts_et')
 
+    args = parser.parse_args()
+    print(args)
+    os.environ["WANDB_API_KEY"] = wandb_dict[args.wandb_username]
+    model_name_ch = re.sub('/','_',args.model_name)
+    wandb_logger = WandbLogger(
+                log_model="all",
+                name=f'{model_name_ch}_{args.batch_size}_{args.learning_rate}_{time_now}',
+                project=args.wandb_project,
+                entity=args.wandb_entity,
+                )
+    
+    #val_acc 높아지지 않으면 log 기록 x
+    # wandb_logger = WandbLogger(log_model="all")
+    # checkpoint_callback = ModelCheckpoint(monitor="val_accuracy", mode="max")
+
+    # Checkpoint
+    checkpoint_callback = ModelCheckpoint(monitor='val_loss',
+                                        save_top_k=3,
+                                        save_last=True,
+                                        save_weights_only=True,
+                                        verbose=False,
+                                        mode='min')
+
+    # Earlystopping
+    earlystopping = EarlyStopping(monitor='val_loss', patience=4, mode='min')
+    
     # dataloader와 model을 생성합니다.
     dataloader = Dataloader(args.model_name, args.batch_size, args.shuffle, args.train_path, args.dev_path,
                             args.test_path, args.predict_path)
+    model = Model(args.model_name, args.learning_rate)
 
     # gpu가 없으면 'gpus=0'을, gpu가 여러개면 'gpus=4'처럼 사용하실 gpu의 개수를 입력해주세요
-    trainer = pl.Trainer(gpus=1, max_epochs=args.max_epoch, log_every_n_steps=1)
+    trainer = pl.Trainer(
+        gpus=-1, 
+        max_epochs=args.max_epoch, 
+        log_every_n_steps=1,
+        logger=wandb_logger,    # W&B integration
+        callbacks = [checkpoint_callback, earlystopping]
+        )
 
-    # Inference part
-    # 저장된 모델로 예측을 진행합니다.
-    
-    model_name_ch = re.sub('/','_',args.model_name)
+    # Train part
+    trainer.fit(model=model, datamodule=dataloader)
+    trainer.test(model=model, datamodule=dataloader)
 
-    
+    # 학습이 완료된 모델을 저장합니다.
     output_dir_path = 'output'
-    output_path = os.path.join(output_dir_path, f'{model_name_ch}_{args.time_now}_model.pt')
+    if not os.path.exists(output_dir_path):
+        os.makedirs(output_dir_path)
 
-    model = torch.load(output_path)
-    predictions = trainer.predict(model=model, datamodule=dataloader)
-
-    # 예측된 결과를 형식에 맞게 반올림하여 준비합니다.
-    predictions = list(round(float(i), 1) for i in torch.cat(predictions))
-
-    # output 형식을 불러와서 예측된 결과로 바꿔주고, output.csv로 출력합니다.
-    output = pd.read_csv('./data/sample_submission.csv')
-    output['target'] = predictions
-    
-    result_dir_path = 'result'
-    if not os.path.exists(result_dir_path):
-        os.makedirs(result_dir_path)
-    
-    result_path = os.path.join(result_dir_path, 'output.csv')
-    output.to_csv(result_path, index=False)
+    output_path = os.path.join(output_dir_path, f'{model_name_ch}_{time_now}_model.pt')
+    torch.save(model, output_path)
