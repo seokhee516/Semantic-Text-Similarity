@@ -225,7 +225,7 @@ if __name__ == '__main__':
                                         mode='min')
 
     # Earlystopping
-    earlystopping = EarlyStopping(monitor='val_loss', patience=4, mode='min')
+    earlystopping = EarlyStopping(monitor='val_loss', patience=3, mode='min')
     
     # dataloader와 model을 생성합니다.
     dataloader = Dataloader(args.model_name, args.batch_size, args.shuffle, args.train_path, args.dev_path,

@@ -181,7 +181,7 @@ if __name__ == '__main__':
     parser.add_argument('--test_path', default='./data/test.csv')
     parser.add_argument('--predict_path', default='./data/test.csv')
     parser.add_argument('--time_now', default='10261724')
-    args = parser.parse_args(args=[])
+    args = parser.parse_args()
 
     # dataloader와 model을 생성합니다.
     dataloader = Dataloader(args.model_name, args.batch_size, args.shuffle, args.train_path, args.dev_path,
@@ -213,5 +213,5 @@ if __name__ == '__main__':
     if not os.path.exists(result_dir_path):
         os.makedirs(result_dir_path)
     
-    result_path = os.path.join(result_dir_path, 'output.csv')
+    result_path = os.path.join(result_dir_path, f'output_{args.time_now}.csv')
     output.to_csv(result_path, index=False)
