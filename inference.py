@@ -9,7 +9,7 @@ import torch
 import torchmetrics
 import pytorch_lightning as pl
 import os
-os.chdir('/opt/ml')
+#os.chdir('/opt/ml')
 
 class Dataset(torch.utils.data.Dataset):
     def __init__(self, inputs, targets=[]):
@@ -176,10 +176,10 @@ if __name__ == '__main__':
     parser.add_argument('--max_epoch', default=1, type=int)
     parser.add_argument('--shuffle', default=True)
     parser.add_argument('--learning_rate', default=1e-5, type=float)
-    parser.add_argument('--train_path', default='./data/train.csv')
-    parser.add_argument('--dev_path', default='./data/dev.csv')
-    parser.add_argument('--test_path', default='./data/test.csv')
-    parser.add_argument('--predict_path', default='./data/test.csv')
+    parser.add_argument('--train_path', default='../../data/train.csv')
+    parser.add_argument('--dev_path', default='../../data/dev.csv')
+    parser.add_argument('--test_path', default='../../data/test.csv')
+    parser.add_argument('--predict_path', default='../../data/test.csv')
     parser.add_argument('--time_now', default='10261724')
     args = parser.parse_args()
 
@@ -194,8 +194,6 @@ if __name__ == '__main__':
     # 저장된 모델로 예측을 진행합니다.
     
     model_name_ch = re.sub('/','_',args.model_name)
-
-    
     output_dir_path = 'output'
     output_path = os.path.join(output_dir_path, f'{model_name_ch}_{args.time_now}_model.pt')
 
@@ -206,7 +204,7 @@ if __name__ == '__main__':
     predictions = list(round(float(i), 1) for i in torch.cat(predictions))
 
     # output 형식을 불러와서 예측된 결과로 바꿔주고, output.csv로 출력합니다.
-    output = pd.read_csv('./data/sample_submission.csv')
+    output = pd.read_csv('../../data/sample_submission.csv')
     output['target'] = predictions
     
     result_dir_path = 'result'

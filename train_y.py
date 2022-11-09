@@ -144,11 +144,10 @@ class Model(pl.LightningModule):
         self.plm = transformers.AutoModelForSequenceClassification.from_pretrained(
             pretrained_model_name_or_path=self.model_name, num_labels=1)
         # Loss 계산을 위해 사용될 L1Loss를 호출합니다.
-        self.loss_func = torch.nn.L1Loss()
+        self.loss_func = torch.nn.MSELoss()  ##MSE LOSS
 
     def forward(self, x):
         x = self.plm(x)['logits']
-
         return x
 
     def training_step(self, batch, batch_idx):
@@ -207,15 +206,15 @@ if __name__ == '__main__':
                 )
 
     # Checkpoint
-    checkpoint_callback = ModelCheckpoint(monitor='val_loss',
-                                        save_top_k=3,
+    checkpoint_callback = ModelCheckpoint(monitor='val_pearson',
+                                        save_top_k=1,
                                         save_last=True,
-                                        save_weights_only=True,
+                                        save_weights_only=False,
                                         verbose=False,
-                                        mode='min')
+                                        mode='max')
 
     # Earlystopping
-    earlystopping = EarlyStopping(monitor='val_loss', patience=3, mode='min')
+    earlystopping = EarlyStopping(monitor='val_pearson', patience=2, mode='max')
     
     # dataloader와 model을 생성합니다.
     dataloader = Dataloader(cfg.model.model_name, cfg.train.batch_size, cfg.data.shuffle, cfg.path.train_path, cfg.path.dev_path,
