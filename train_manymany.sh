@@ -1,5 +1,5 @@
 #!/bin/bash
-CONFIGS=("base_config" "electra_config")
+CONFIGS=("ex")
 
 config_length=${#CONFIGS[@]}
 
@@ -8,6 +8,6 @@ for (( i=0; i<${config_length}; i++ ))
 do
 
     echo ${CONFIGS[$i]}
-    python3 train_y.py \
+    python3 train_z.py \
         --config ${CONFIGS[$i]}
 done
