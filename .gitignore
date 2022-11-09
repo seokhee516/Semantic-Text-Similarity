@@ -5,12 +5,9 @@ sts
 output
 nohup.out
 requirements.txt
-<<<<<<< HEAD
 Final_STS
 Roberta-large
 config
 .ipynb_checkpoints
-=======
 resultoutput
 result
->>>>>>> origin/GW
