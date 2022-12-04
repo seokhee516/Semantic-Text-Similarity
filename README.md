@@ -47,18 +47,18 @@ master branch에서 baseline 수정 후, 팀원의 이름으로 분기를 나누
 
 # 3. 프로젝트 수행 절차 및 방법
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bcaf192c-1fd2-4362-9285-0d0111501d9a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083323Z&X-Amz-Expires=86400&X-Amz-Signature=f50b53f82bedc524939299c6f44988f7fa147e3f48eb973b79231253a7088603&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bcaf192c-1fd2-4362-9285-0d0111501d9a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221204T084541Z&X-Amz-Expires=86400&X-Amz-Signature=f37463f6dc72364509bf173d2881f3a8f731f0655789a04a3dc68c339796e344&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
 
 ## 1) 탐색적 분석 및 전처리(EDA) - 학습 데이터 소개
 
-![train.csv](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/da657ea7-83fc-428d-9365-c97a3574cbb3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083327Z&X-Amz-Expires=86400&X-Amz-Signature=d575363691c21d334d0fa984182e0dcd68a5f8aff90bfc762391eb269e6d7a44&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![train.csv](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/da657ea7-83fc-428d-9365-c97a3574cbb3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221204T084545Z&X-Amz-Expires=86400&X-Amz-Signature=b45f919b7a642ec99104a517e52a873e70c0ec4a127499031d8774ef4b2b2636&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
 
 train.csv
 
 - 두 문장 간의 유사도를 예측하는 것이 프로젝트의 최종 목표이고, 데이터셋은 train(9,324 rows)/dev(550 rows)/test(1,100 rows) 비율로 나누어, csv형태로 제공되었습니다.
 - 각 문장의 출처는 국민청원 게시판 제목, 네이버 영화 감성 분석 코퍼스, 업스테이지 슬랙 데이터이며. 각 데이터별 유사도(Label) 점수는 여러명의 사람이 공통의 점수 기준으로 두 문장간의 점수를 평균낸 값입니다.
 
-![train.csv : 9,324 rows](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c6452a27-db6e-42fb-a8d3-df8cfbc910ea/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083332Z&X-Amz-Expires=86400&X-Amz-Signature=1111243de975d25ae604fd6b96463d58f8155672793262d89e5a8a75644f875b&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![train.csv : 9,324 rows](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c6452a27-db6e-42fb-a8d3-df8cfbc910ea/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221204T084551Z&X-Amz-Expires=86400&X-Amz-Signature=b5d23c124e5b066279b48675565342aad53e977d124e487ace663b3a1d58a2a6&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
 
 train.csv : 9,324 rows
 
