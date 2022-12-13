@@ -17,14 +17,14 @@
 
 Team Notion에 각 팀의 현황과 실험 결과를 기록 및 공유.
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/acd4e1cb-9b3a-436b-aef6-e5a743517e49/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083735Z&X-Amz-Expires=86400&X-Amz-Signature=6d3f6dc3113235f8f245bc6a498c18dfe5da531c2fbf446174d28a2e3d9c990f&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled (33)](https://user-images.githubusercontent.com/86893209/207260426-837d1777-2d43-4842-a4d4-e9760fd75ed3.png)
 
 > **Git**
 > 
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1f41d4c2-2114-4368-8f26-9ba03f84844b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083320Z&X-Amz-Expires=86400&X-Amz-Signature=5279a3d59cff08bd0ebfb43bd2f51bd6fe585954205b23ae023fd62b34faa170&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled (31)](https://user-images.githubusercontent.com/86893209/207260463-f6b316bc-2061-4057-8ecb-7aee0750ff9d.png)
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6d77936e-55d5-4170-9899-06b86744e3f8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083316Z&X-Amz-Expires=86400&X-Amz-Signature=82cd6096b370a7939305f0f512c28ada172c11f65cec97190f64a426ee7434a6&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled (32)](https://user-images.githubusercontent.com/86893209/207260493-8da5cdc9-3aec-4f1a-86b7-bc7a64312f4a.png)
 
 master branch에서 baseline 수정 후, 팀원의 이름으로 분기를 나누어 작업 진행하였습니다. Wandb, config 파일 연결 등 분업하여 작업 후, 각자 branch로 merge하였습니다.
 
@@ -58,11 +58,11 @@ train.csv
 - 두 문장 간의 유사도를 예측하는 것이 프로젝트의 최종 목표이고, 데이터셋은 train(9,324 rows)/dev(550 rows)/test(1,100 rows) 비율로 나누어, csv형태로 제공되었습니다.
 - 각 문장의 출처는 국민청원 게시판 제목, 네이버 영화 감성 분석 코퍼스, 업스테이지 슬랙 데이터이며. 각 데이터별 유사도(Label) 점수는 여러명의 사람이 공통의 점수 기준으로 두 문장간의 점수를 평균낸 값입니다.
 
-![train.csv : 9,324 rows](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c6452a27-db6e-42fb-a8d3-df8cfbc910ea/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221204T084551Z&X-Amz-Expires=86400&X-Amz-Signature=b5d23c124e5b066279b48675565342aad53e977d124e487ace663b3a1d58a2a6&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled (35)](https://user-images.githubusercontent.com/86893209/207260557-0ad7c27d-c969-45da-8ced-07ed945a81ba.png)
 
 train.csv : 9,324 rows
 
-![dev.csv : 550 rows](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3c5a7afa-63d2-4abc-b95c-42532543db53/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083334Z&X-Amz-Expires=86400&X-Amz-Signature=f173f9c17161d2c7a11e6bc0a525a0c2755b2b1bbc70ee1a63173181259ca27d&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled (36)](https://user-images.githubusercontent.com/86893209/207260585-e63f91b9-1cb7-4399-9e24-085801d3d11c.png)
 
 dev.csv : 550 rows
 
@@ -133,14 +133,14 @@ Baseline Model(klue/roberta-base, Loss: L1, Optimizer: AdamW) 기준으로 아�
 
 ### RoBERTa Large 최적화
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6b8382ef-3c4d-44c2-acbb-7e43596c1817/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083341Z&X-Amz-Expires=86400&X-Amz-Signature=86e205b0ac3ddd0f55a842b0bbce3d7755f6da0cb8f090610ad50024b0338d31&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled (37)](https://user-images.githubusercontent.com/86893209/207260672-5d7305d9-1ab6-4b69-addf-1ddc5e709eb4.png)
 
 - klue/roberta-large의 경우 모델의 크기가 커서 학습이 수행되지 않는 문제가 발생하여, **batch size와 learning rate를 조정**하여 최적화하였습니다. Data Augmentation 결과를 기반으로, 가장 유의미 했던 Swap Sentence, Label Smoothing 0 및 Copied Translation Label 5, Reverse Text 20% 데이터를 각각 실험하였습니다.
 - 실험 결과, **Label Smoothing 0 및 Copied Translation Label 5** 데이터의 **MSE Loss**, **Learning Rate 7e-6, Batch Size 8** 조건에서 **Val Pearson 0.9256**으로 가장 높은 성능을 확인하였습니다.
 
 ### ELECTRA 최적화
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/014c039f-1505-401c-876e-d3cdf2eede9c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083345Z&X-Amz-Expires=86400&X-Amz-Signature=65d7ad449ac78c9da2e3e18d6931360d6c554d140fa6713db2b9db016c9bfa23&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled (38)](https://user-images.githubusercontent.com/86893209/207260693-86b3c11c-852f-4000-9034-30788a94cf17.png)
 
 - 한국어 ELECTRA 모델 3개(monologg/koelectra-base-v3-discriminator, beomi/KcELECTRA-base, snunlp/KR-ELECTRA-discriminator)와 데이터 증강에서 유의미한 성능향상을 보인 Swap Sentence, Label Smoothing 0, Copied Translation Label 5 데이터를 기준으로, Learning Rate, Batch Size 최적화를 진행하였습니다.
 - 실험 결과, **snunlp/KR-ELECTRA-discriminator** 모델, **Label Smoothing 0, Copied Translation Label 5, Swap Sentence** 데이터의 **Learning Rate 3e-5 Batch Size 16** 조건에서 **Val Pearson 0.9309**으로 **단일 모델 중 가장 높은 성능**을 확인하였습니다.
