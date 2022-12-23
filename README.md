@@ -47,11 +47,11 @@ master branch에서 baseline 수정 후, 팀원의 이름으로 분기를 나누
 
 # 3. 프로젝트 수행 절차 및 방법
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bcaf192c-1fd2-4362-9285-0d0111501d9a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221204T084541Z&X-Amz-Expires=86400&X-Amz-Signature=f37463f6dc72364509bf173d2881f3a8f731f0655789a04a3dc68c339796e344&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled (41)](https://user-images.githubusercontent.com/86893209/209278066-02d413d5-7f67-4052-9309-0a767e68d349.png)
 
 ## 1) 탐색적 분석 및 전처리(EDA) - 학습 데이터 소개
 
-![train.csv](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/da657ea7-83fc-428d-9365-c97a3574cbb3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221204%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221204T084545Z&X-Amz-Expires=86400&X-Amz-Signature=b45f919b7a642ec99104a517e52a873e70c0ec4a127499031d8774ef4b2b2636&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled (40)](https://user-images.githubusercontent.com/86893209/209278059-825e3621-8016-4052-ba8c-2266c67c1252.png)
 
 train.csv
 
