@@ -1,8 +1,12 @@
+# 문장 간 유사도 측정
 # 1. 프로젝트 개요
 
 <aside>
-💡 Competitions : [NLP] 문장 간 유사도 측정
-부스트캠프에서 개최한 NLP 의미 유사도 판별(Semantic Text Similarity, STS) TASK 대회에서 진행되었던 프로젝트로, STS데이터셋을 활용하여 두 문장의 유사도를 측정하는 AI모델을 설계함.
+- 부스트캠프 AI Tech에서 개최한 NLP 기초대회
+- 문장 간 유사도 측정: 의미 유사도 판별(Semantic Text Similarity, STS)이란 두 문장이 의미적으로 얼마나 유사한지를 수치화하는 NLP Task
+- 대회기간: 2022.10.26 ~ 2022.11.03
+- 데이터셋: 학습 데이터셋 9,324개, 검증 데이터셋 550개, 평가 데이터는 1,100개. 평가 데이터의 50%는 Public 점수 계산에 활용되어 실시간 리더보드에 표기가 되고, 남은 50%는 Private 결과 계산에 활용되어 대회 종료 후 평가
+- 평가방법: 0과 5사이의 유사도 점수를 예측. 피어슨 상관계수(Pearson Correlation Coefficient ,PCC) 지표
 
 </aside>
 
