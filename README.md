@@ -1,4 +1,4 @@
-# 문장 간 유사도 측정
+![a](https://user-images.githubusercontent.com/86893209/209615511-a0119ffc-f9a3-4655-afb5-3fbcd4d1142d.png)
 # 1. 프로젝트 개요
 
 <aside>
