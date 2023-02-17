@@ -5,15 +5,14 @@
     
 - 부스트캠프 AI Tech에서 개최한 NLP 기초대회  
 - 문장 간 유사도 측정: 의미 유사도 판별(Semantic Text Similarity, STS)이란 두 문장이 의미적으로 얼마나 유사한지를 수치화하는 NLP Task  
-- 대회기간: 2022.10.26 ~ 2022.11.03
 - 데이터셋: 학습 데이터셋 9,324개, 검증 데이터셋 550개, 평가 데이터는 1,100개. 평가 데이터의 50%는 Public 점수 계산에 활용되어 실시간 리더보드에 표기가 되고, 남은 50%는 Private 결과 계산에 활용되어 대회 종료 후 평가
 - 평가방법: 0과 5사이의 유사도 점수를 예측. 피어슨 상관계수(Pearson Correlation Coefficient ,PCC) 지표
 
 </aside>
 
 ### TimeLine
-
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8c31dd14-8481-4733-8767-d13a6afa9076/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221201%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221201T083306Z&X-Amz-Expires=86400&X-Amz-Signature=be620327ae19cc6b55d440dd059d82d532f7a6795c4424638f16735a789e61a9&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22Untitled.png%22&x-id=GetObject)
+- 대회기간: 2022.10.26 ~ 2022.11.03
+![Untitled (1)](https://user-images.githubusercontent.com/86893209/219698737-5a6b74c5-589c-41fc-9035-2bd2cd4ad258.png)
 
 ### 협업 방식
 
